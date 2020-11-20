@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="TestCalculationView" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="ProductByClientCalculationView"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TRAINING_PRODUCTS_TBLPRODUCTS">
+    <resourceUri>TRAINING_PRODUCTS_TBLPRODUCTS</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="TRAINING_PRODUCTS_TBLPRODUCTS">
+  <attributes>
+    <attribute id="NAME" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping columnObjectName="TRAINING_PRODUCTS_TBLPRODUCTS" columnName="NAME"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="SALESPRICE" order="2" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SALESPRICE"/>
+      <measureMapping columnObjectName="TRAINING_PRODUCTS_TBLPRODUCTS" columnName="SALESPRICE"/>
+    </measure>
+    <measure id="QUANTITY" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QUANTITY"/>
+      <measureMapping columnObjectName="TRAINING_PRODUCTS_TBLPRODUCTS" columnName="QUANTITY"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
