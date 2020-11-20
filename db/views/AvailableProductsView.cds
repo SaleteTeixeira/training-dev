@@ -3,5 +3,5 @@ namespace training.views;
 
 define view AvailableProductsView as 
 
-    select from products.TblProducts as p where p.validFrom <= now() and p.validTo >= now();
+    select from products.TblProducts as prod where prod.validFrom <= now() and prod.validTo >= now();
     
